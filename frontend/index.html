@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario - Inteligencia Artificial</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Encuesta sobre Inteligencia Artificial</h1>
+
+    <form id="iaForm">
+      <!-- Datos del estudiante -->
+      <label>Nombre completo</label>
+      <input type="text" name="nombre_completo" maxlength="120" required />
+
+      <label>Edad</label>
+      <input type="number" name="edad" min="15" max="99" required />
+
+      <label>Facultad</label>
+      <select name="facultad" required>
+        <option value="">Seleccione...</option>
+        <option value="artes_humanidades">Facultad de Artes y Humanidades</option>
+        <option value="ingenierias">Facultad de Ingenierías</option>
+        <option value="ciencias_economicas_administrativas">Facultad de Ciencias Económicas y Administrativas</option>
+        <option value="ciencias_exactas_aplicadas">Facultad de Ciencias Exactas y Aplicadas</option>
+      </select>
+
+      <label>Carrera</label>
+      <select name="carrera" id="carrera" required>
+        <option value="">Seleccione...</option>
+
+        <!-- Artes y Humanidades -->
+        <optgroup label="Artes y Humanidades">
+          <option value="artes_grabacion_produccion_musical">Artes de la Grabación y Producción Musical</option>
+          <option value="artes_visuales">Artes Visuales</option>
+          <option value="cine">Cine</option>
+          <option value="ingenieria_diseno_industrial">Ingeniería en Diseño Industrial</option>
+          <option value="tecnologia_diseno_industrial">Tecnología en Diseño Industrial</option>
+          <option value="tecnologia_informatica_musical">Tecnología en Informática Musical</option>
+          <option value="interpretacion_traduccion_lsc_espanol">Interpretación y Traducción LSC–Español</option>
+        </optgroup>
+
+        <!-- Ciencias Económicas y Administrativas -->
+        <optgroup label="Ciencias Económicas y Administrativas">
+          <option value="administracion_deporte">Administración del Deporte</option>
+          <option value="administracion_tecnologica">Administración Tecnológica</option>
+          <option value="contaduria_publica">Contaduría Pública</option>
+          <option value="ingenieria_produccion">Ingeniería de Producción</option>
+          <option value="ingenieria_financiera_negocios">Ingeniería Financiera y de Negocios</option>
+          <option value="ingenieria_calidad">Ingeniería de la Calidad</option>
+          <option value="tecnologia_sistemas_produccion">Tecnología en Sistemas de Producción</option>
+          <option value="tecnologia_analisis_costos_presupuestos">Tecnología en Análisis de Costos y Presupuestos</option>
+          <option value="tecnologia_calidad">Tecnología en Calidad</option>
+          <option value="tecnologia_gestion_administrativa">Tecnología en Gestión Administrativa</option>
+        </optgroup>
+
+        <!-- Ciencias Exactas y Aplicadas -->
+        <optgroup label="Ciencias Exactas y Aplicadas">
+          <option value="ciencias_ambientales">Ciencias Ambientales</option>
+          <option value="ingenieria_biomedica">Ingeniería Biomédica</option>
+          <option value="quimica_industrial">Química Industrial</option>
+          <option value="tecnologia_construccion_acabados_arquitectonicos">Tecnología en Construcción y Acabados Arquitectónicos</option>
+          <option value="tecnologia_mantenimiento_equipo_biomedico">Tecnología en Mantenimiento de Equipo Biomédico</option>
+        </optgroup>
+
+        <!-- Ingenierías -->
+        <optgroup label="Ingenierías">
+          <option value="ingenieria_sistemas">Ingeniería de Sistemas</option>
+          <option value="ingenieria_ciencias_datos">Ingeniería en Ciencias de Datos</option>
+          <option value="ingenieria_telecomunicaciones">Ingeniería de Telecomunicaciones</option>
+          <option value="ingenieria_electromecanica">Ingeniería Electromecánica</option>
+          <option value="ingenieria_electronica">Ingeniería Electrónica</option>
+          <option value="ingenieria_mecatronica">Ingeniería Mecatrónica</option>
+          <option value="tecnologia_automatizacion_electronica">Tecnología en Automatización Electrónica</option>
+          <option value="tecnologia_sistemas_informacion">Tecnología en Sistemas de Información</option>
+          <option value="tecnologia_sistemas_electromecanicos">Tecnología en Sistemas Electromecánicos</option>
+          <option value="tecnologia_gestion_redes_telecomunicaciones">Tecnología en Gestión de Redes de Telecomunicaciones</option>
+          <option value="tecnologia_diseno_programacion_software_saas">Tecnología en Diseño y Programación de Software (SaaS)</option>
+          <option value="tecnologia_desarrollo_apps_moviles">Tecnología en Desarrollo de Apps Móviles</option>
+          <option value="tecnologia_desarrollo_software">Tecnología en Desarrollo de Software</option>
+        </optgroup>
+
+        <!-- <option value="otra">Otra</option> -->
+      </select>
+      <input type="text" id="carrera_otro_texto" name="carrera_otro_texto" placeholder="¿Cuál?" class="oculto" />
+
+      <!-- ====== Encuesta IA (lo que ya tenías) ====== -->
+
+      <!-- 1. Familiaridad -->
+      <label>1. ¿Qué tan familiarizado estás con la inteligencia artificial?</label>
+      <select name="familiaridad" required>
+        <option value="">Seleccione...</option>
+        <option value="nada">Nada familiarizado</option>
+        <option value="poco">Poco familiarizado</option>
+        <option value="algo">Algo familiarizado</option>
+        <option value="bastante">Bastante familiarizado</option>
+        <option value="muy">Muy familiarizado</option>
+      </select>
+
+      <!-- 2. Definición -->
+      <label>2. ¿Cuál de las siguientes frases describe mejor lo que entiendes por IA?</label>
+      <select name="definicion" id="definicion" required>
+        <option value="">Seleccione...</option>
+        <option value="reglas">Sistemas que siguen reglas programadas</option>
+        <option value="aprendizaje">Sistemas que aprenden de datos</option>
+        <option value="creatividad">Sistemas que imitan creatividad humana</option>
+        <option value="razonamiento">Máquinas que razonan por sí mismas</option>
+        <option value="no_seguro">No estoy seguro</option>
+        <!-- <option value="otro">Otro</option> -->
+      </select>
+      <!-- <input type="text" id="definicion_otro_texto" name="definicion_otro_texto" placeholder="¿Cuál?" class="oculto" /> -->
+
+      <!-- 3. Herramientas -->
+      <label>3. ¿Qué herramientas basadas en IA has usado o escuchado?</label>
+      <div class="checkbox-group" id="herramientas">
+        <label><input type="checkbox" value="chatgpt" /> ChatGPT</label>
+        <label><input type="checkbox" value="gemini" /> Gemini</label>
+        <label><input type="checkbox" value="copilot" /> Copilot</label>
+        <label><input type="checkbox" value="claude" /> Claude</label>
+        <label><input type="checkbox" value="midjourney" /> Midjourney</label>
+        <label><input type="checkbox" value="dalle" /> DALL·E</label>
+        <label><input type="checkbox" value="perplexity" /> Perplexity</label>
+        <label><input type="checkbox" value="leonardo" /> Leonardo AI</label>
+        <!-- <label><input type="checkbox" value="otra" id="otraHerramienta" /> Otra</label> -->
+      </div>
+      <!-- <input type="text" id="herramientas_otra_texto" name="herramientas_otra_texto" placeholder="¿Cuál?" class="oculto" /> -->
+
+      <!-- 4. Frecuencia -->
+      <label>4. ¿Con qué frecuencia usas herramientas de IA?</label>
+      <select name="frecuencia" required>
+        <option value="">Seleccione...</option>
+        <option value="nunca">Nunca</option>
+        <option value="mensual">Ocasionalmente</option>
+        <option value="semanal">Semanalmente</option>
+        <option value="varios_dias_semana">Varios días por semana</option>
+        <option value="diaria">Todos los días</option>
+      </select>
+
+      <!-- 5. Usos -->
+      <label>5. ¿Para qué actividades usas o usarías la IA?</label>
+      <div class="checkbox-group" id="usos">
+        <label><input type="checkbox" value="estudio" /> Estudio</label>
+        <label><input type="checkbox" value="trabajo" /> Trabajo</label>
+        <label><input type="checkbox" value="programacion" /> Programación</label>
+        <label><input type="checkbox" value="contenido" /> Creación de contenido</label>
+        <label><input type="checkbox" value="entretenimiento" /> Entretenimiento</label>
+        <label><input type="checkbox" value="diseno" /> Diseño</label>
+        <label><input type="checkbox" value="productividad" /> Productividad</label>
+        <!-- <label><input type="checkbox" value="otra" id="otroUso" /> Otro</label> -->
+      </div>
+      <!-- <input type="text" id="usos_otra_texto" name="usos_otra_texto" placeholder="¿Cuál?" class="oculto" /> -->
+
+      <!-- 6. Confianza -->
+      <label>6. ¿Qué tanto confías en los resultados generados por la IA?</label>
+      <select name="confianza" required>
+        <option value="">Seleccione...</option>
+        <option value="nada">Nada</option>
+        <option value="poca">Poco</option>
+        <option value="regular">Regular</option>
+        <option value="bastante">Bastante</option>
+        <option value="total">Totalmente</option>
+      </select>
+
+      <!-- 7. Percepción -->
+      <label>7. ¿Qué impacto crees que tendrá la IA en la sociedad?</label>
+      <select name="percepcion_social" required>
+        <option value="">Seleccione...</option>
+        <option value="muy_negativo">Muy negativo</option>
+        <option value="negativo">Negativo</option>
+        <option value="neutro">Neutro</option>
+        <option value="positivo">Positivo</option>
+        <option value="muy_positivo">Muy positivo</option>
+      </select>
+
+      <!-- 8. Regulación -->
+      <label>8. ¿Crees que debería existir una regulación sobre la IA?</label>
+      <select name="regulacion" required>
+        <option value="">Seleccione...</option>
+        <option value="estricta">Sí, estricta</option>
+        <option value="flexible">Sí, flexible</option>
+        <option value="libre">No, libre uso</option>
+        <option value="nsnc">No lo sé</option>
+      </select>
+
+      <!-- 9. Emoción -->
+      <label>9. ¿Qué emoción te genera el avance de la IA?</label>
+      <select name="emocion" required>
+        <option value="">Seleccione...</option>
+        <option value="curiosidad">Curiosidad</option>
+        <option value="entusiasmo">Entusiasmo</option>
+        <option value="indiferencia">Indiferencia</option>
+        <option value="inquietud">Inquietud</option>
+        <option value="miedo">Miedo</option>
+      </select>
+
+      <!-- 10. Sectores -->
+      <label>10. ¿Qué sectores se verán más impactados?</label>
+      <div class="checkbox-group" id="sectores">
+        <label><input type="checkbox" value="educacion" /> Educación</label>
+        <label><input type="checkbox" value="salud" /> Salud</label>
+        <label><input type="checkbox" value="tecnologia" /> Tecnología</label>
+        <label><input type="checkbox" value="arte_medios" /> Arte y medios</label>
+        <label><input type="checkbox" value="finanzas" /> Finanzas</label>
+        <label><input type="checkbox" value="transporte" /> Transporte</label>
+        <label><input type="checkbox" value="gobierno" /> Gobierno</label>
+        <!-- <label><input type="checkbox" value="otro" id="otroSector" /> Otro</label> -->
+      </div>
+      <!-- <input type="text" id="sectores_otro_texto" name="sectores_otro_texto" placeholder="¿Cuál?" class="oculto" /> -->
+
+      <button type="submit">Enviar respuesta</button>
+      <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+        <a href="/csv.html" style="
+          text-decoration:none; font-weight:700; padding:10px 14px; border-radius:10px; 
+          color:#0b0f1a; background:linear-gradient(90deg,#72ffb4,#00e5ff,#7c5cff);">
+          Ver CSV / Análisis
+        </a>
+      </div>
+
+    </form>
+    
+    <p id="mensaje"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
