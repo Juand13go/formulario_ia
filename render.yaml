@@ -17,3 +17,4 @@ services:
         sync: false
       - key: APPWRITE_COLLECTION_ID
         sync: false
+
