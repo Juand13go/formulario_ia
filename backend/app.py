@@ -11,7 +11,8 @@ from appwrite.client import Client
 from appwrite.services.databases import Databases
 
 # Validación de payload
-from utils import validate_payload
+# from utils import validate_payload
+from .utils import validate_payload
 
 # -------------------------------------------------------------------
 # Configuración base
